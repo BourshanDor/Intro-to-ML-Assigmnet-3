@@ -45,6 +45,27 @@ def SGD_hinge(data, labels, C, eta_0, T):
     Implements SGD for hinge loss.
     """
     # TODO: Implement me
+
+    N = data.size 
+    w_t = 0
+    eta_update = lambda t : eta_0 / t 
+    eta_t = eta_0
+
+    for t in range(T) :
+        eta_t = eta_update(t)
+        i = np.random.randint(0, N)
+        x_i = data[i]
+        y_i = labels[i]
+        if np.multiply(x_i, w_t) * y_i < 1 : 
+            w_t = (1-eta_t) * w_t + eta_t * C * y_i * x_i 
+        else : 
+            w_t = (1-eta_t) * w_t
+    
+    return w_t
+
+
+
+
     pass
 
 
@@ -57,6 +78,51 @@ def SGD_log(data, labels, eta_0, T):
 
 #################################
 
-# Place for additional code
+ def cross_validation(train_data, train_labels, validation_data, validation_labels, C , T):
+        """Finds a k that gives a good test error.
+        Input: m - an integer, the size of the data sample.
+        Returns: The best k value (an integer) found by the cross validation algorithm.
+        """
+        
+        w = SGD_hinge(train_data, train_labels,C, eta_0, T)
+        training_number = int(m*0.8) 
+        test_number = m - training_number
+
+        x_axis = [] 
+        y_true_axis = [] 
+        y_empirical_axis = []
+
+        k_of_the_best_empirical_error =  0
+        best_empirical_error = 1 
+        best_hypothesis = []
+        train_sample = self.sample_from_D(training_number)
+        test_sample = self.sample_from_D(test_number)
+        train_sample_x = train_sample[:,0] 
+        train_sample_lable = train_sample[:,1] 
+    
+        for k in range(1, 11):
+            interval, besterror = intervals.find_best_interval(train_sample_x, train_sample_lable, k)
+            y_true_axis.append(self.true_error(interval))
+            empirical_error = self.empirical_error(interval, test_sample)
+            y_empirical_axis.append(empirical_error) 
+            x_axis.append(k)
+
+            if best_empirical_error > empirical_error : 
+                k_of_the_best_empirical_error = k
+                best_empirical_error = empirical_error
+                best_hypothesis = interval
+
+        print("The best empirical k : %d" % k_of_the_best_empirical_error)
+        print("The best hyposesis that found represent as a set of intervals: ", best_hypothesis)
+
+            
+        plt.plot(x_axis, y_true_axis, label="True Error")
+        plt.plot(x_axis, y_empirical_axis, label="Empirical Error")
+        plt.title("empirical and true errors as a function of k")
+        plt.xlabel("k")
+        plt.ylabel("empirical and true errors ")
+        plt.legend()
+        plt.show()
+
 
 #################################
