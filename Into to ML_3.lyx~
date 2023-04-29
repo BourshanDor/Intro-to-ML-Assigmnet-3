@@ -4254,26 +4254,164 @@ accuracy=0.973
 \begin_layout Standard
 
 \lang hebrew
-ניתן לראות כי הפיקסלים הלבנים באמצע יכולים להעיד על אמצע הספרה 
-\begin_inset Formula $8$
-\end_inset
-
- והפיקסלים בצבעי לבן - אפור בצדדים מעידים על הספרה 
-\begin_inset Formula $8$
-\end_inset
-
- גם כן.
- 
+ניתן הסבר : 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 
 \lang hebrew
-הפיקסלים השחורים מעידים על הספרה 
-\begin_inset Formula $0$
+ההגעה לערך המינימלי של פונקציית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+log-loss
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ע
+\begin_inset Quotes erd
+\end_inset
+
+י אלגוריתם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+SGD
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+מתבצע מהר, ולכן 
+\begin_inset Formula $\w$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+נלכד
+\begin_inset Quotes erd
+\end_inset
+
+ בערך המינימלי ולכן 
+\begin_inset Formula $\|\w_{t}\|_{2}$
+\end_inset
+
+ אינו משתנה לאחר האיטרציות הראשונות יחסית ל 
+\begin_inset Formula $20,000$
 \end_inset
 
 .
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\lang hebrew
+בכל שלב 
+\begin_inset Formula $\eta$
+\end_inset
+
+ קטן, ולכן השינוי ב
+\begin_inset Formula $\|\w_{t}\|_{2}$
+\end_inset
+
+ , שתלוי בו, יקטן ככל ש 
+\begin_inset Formula $t$
+\end_inset
+
+ גדל.
  
 \end_layout
 
@@ -4300,34 +4438,20 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-\begin_inset Formula $\w$
+\begin_inset Formula $\|\w_{t}\|_{2}$
 \end_inset
 
- as an image
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
+ as function of 
+\begin_inset Formula $t$
 \end_inset
 
 
 \end_layout
 
-\begin_layout Subsection
-(d)
+\end_inset
+
+
 \end_layout
-
-\begin_layout Standard
-
-\lang hebrew
-על סט הבדיקה התקבל : 
-\begin_inset Formula 
-\[
-accuracy=0.992835
-\]
 
 \end_inset
 

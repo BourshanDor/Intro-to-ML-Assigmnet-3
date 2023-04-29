@@ -879,7 +879,7 @@ Perceptron
 ומהרמז מתקיים כי 
 \begin_inset Formula 
 \[
-M\leq\frac{2}{\gamma^{2}}\ln\left(\frac{1}{\gamma^{2}}\right)=\frac{4}{\gamma^{2}}\ln\left(\frac{1}{\gamma^{2}}\right)
+M\leq\frac{2}{\gamma^{2}}\ln\left(\frac{1}{\gamma^{2}}\right)=\frac{4}{\gamma^{2}}\ln\left(\frac{1}{\gamma}\right)
 \]
 
 \end_inset
@@ -896,7 +896,7 @@ M\leq\frac{2}{\gamma^{2}}\ln\left(\frac{1}{\gamma^{2}}\right)=\frac{4}{\gamma^{2
 \end_inset
 
 כ מתקיים כי 
-\begin_inset Formula $\frac{4}{\gamma^{2}}\ln\left(\frac{1}{\gamma^{2}}\right)$
+\begin_inset Formula $\frac{4}{\gamma^{2}}\ln\left(\frac{1}{\gamma}\right)$
 \end_inset
 
  חוסם את 
@@ -3955,7 +3955,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename section_c_image/1.png
-	scale 60
+	scale 50
 
 \end_inset
 
@@ -4155,14 +4155,14 @@ status open
 \align center
 \begin_inset Graphics
 	filename q2/1.png
-	scale 50
+	scale 45
 
 \end_inset
 
 
 \begin_inset Graphics
 	filename q2/2.png
-	scale 50
+	scale 45
 
 \end_inset
 
@@ -4206,7 +4206,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename q2/3.png
-	scale 60
+	scale 50
 
 \end_inset
 
@@ -4427,7 +4427,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename q2/4.png
-	scale 60
+	scale 50
 
 \end_inset
 
