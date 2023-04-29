@@ -77,7 +77,7 @@ def SGD_log(data: np.ndarray, labels:np.ndarray, eta_0: float, T: int)->tuple:
         x_i =  data[i]
         y_i = labels[i]
         w_t = w_t - np.dot(eta_t, gradient_function(y_i, x_i, w_t))
-        # w_t = w_t + eta_t * y_i * x_i * expit(-1*y_i * np.dot(w_t, x_i))
+        #w_t = w_t + eta_t * y_i * x_i * expit(-1*y_i * np.dot(w_t, x_i))
      
     return w_t, w_t_norm
 
@@ -133,8 +133,8 @@ def average_accuracy_plot_eta(question:int , train_data:np.ndarray, train_labels
 
     if log : 
       plt.xscale('log')
-
-    plt.xlim(xlim_left, xlim_right)
+    else:
+        plt.xlim(xlim_left, xlim_right)
     plt.legend()
     plt.show()
     return eta_0_lst[j]
@@ -177,7 +177,8 @@ def average_accuracy_plot_C(train_data:np.ndarray, train_labels:np.ndarray, vali
     if log : 
       plt.xscale('log')
 
-    plt.xlim(xlim_left, xlim_right)
+    else : 
+        plt.xlim(xlim_left, xlim_right)
     plt.legend()
     plt.show()
     return C_lst[j]
@@ -257,8 +258,9 @@ def main() :
 
     # w_as_picture(1,train_data, train_labels, test_data, test_labels, best_eta, best_c, 20000 )
 
-    eta_0_lst = [10**i for i in range(-5,6,1)]
-    best_eta = average_accuracy_plot_eta(2,train_data, train_labels, validation_data, validation_labels, 10, 1, eta_0_lst, 1000, 0, eta_0_lst, True)
+    # eta_0_lst = [10**i for i in range(-5,6,1)]
+    # best_eta = average_accuracy_plot_eta(2,train_data, train_labels, validation_data, validation_labels,
+    #                                       10, 1, eta_0_lst, 1000, 0, 10**-5, True)
 
     # eta_0_lst = [i for i in np.arange(-10000 + best_eta, best_eta + 10000,100)]
     # best_eta = average_accuracy_plot_eta(2,train_data, train_labels, validation_data, validation_labels,10, 1, eta_0_lst, 1000, -10000 + best_eta, best_eta + 10000, False)
@@ -272,8 +274,8 @@ def main() :
     # eta_0_lst = [i for i in np.arange(-10 + best_eta, best_eta + 10, 0.1)]
     # best_eta = average_accuracy_plot_eta(2,train_data, train_labels, validation_data, validation_labels,10, 1, eta_0_lst, 1000, -10 + best_eta, best_eta + 10, False)
 
-    w_as_picture(2,train_data, train_labels, test_data, test_labels, best_eta, 0, 20000 )
-    w_norm_change(train_data, train_labels, 10**(-5), 20000)
+    w_as_picture(2,train_data, train_labels, test_data, test_labels, 10**-5, 0, 20000 )
+    # w_norm_change(train_data, train_labels, best_eta, 20000)
     
 
 if __name__ == "__main__":

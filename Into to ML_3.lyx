@@ -3325,5 +3325,1138 @@ S_{T}=\sum_{t=0}^{T}\|\nabla f\left(\x_{t}\right)\|^{2}
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Programming Assignment
+\end_layout
+
+\begin_layout Section
+SGD for Hinge loss.
+ 
+\end_layout
+
+\begin_layout Subsection
+(a) 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+כדי לבחור את 
+\begin_inset Formula $\eta_{0}$
+\end_inset
+
+ הטוב ביותר, ניתן לאלגוריתם ערכים שהחלו ב 
+\begin_inset Formula 
+\[
+\left(10^{-5},10^{-4},\ldots,10^{4},10^{5}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Formula $\eta_{0}$
+\end_inset
+
+ הטוב ביותר שהתקבל הוא 
+\begin_inset Formula $\eta_{0}=1$
+\end_inset
+
+ עם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+accuracy
+\begin_inset Formula $=0.979$
+\end_inset
+
+
+\lang hebrew
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נתמקד באזור בשבו התקבלה התוצאה הטובה ביותר, והאלגוריתם הורץ שנית )ברזולוציית
+ קפיצות קטנה יותר( 
+\begin_inset Formula 
+\[
+\left(-9999,-9899,\ldots,9801,9901\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Formula $\eta_{0}$
+\end_inset
+
+ הטוב ביותר שהתקבל הוא 
+\begin_inset Formula $\eta_{0}=1$
+\end_inset
+
+ עם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+accuracy
+\begin_inset Formula $=0.977$
+\end_inset
+
+
+\lang hebrew
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נתמקד באזור בשבו התקבלה התוצאה הטובה ביותר, והאלגוריתם הורץ שלישית )ברזולוציית
+ קפיצות קטנה יותר( 
+\begin_inset Formula 
+\[
+\left(-499,-489,\ldots,481,491\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Formula $\eta_{0}$
+\end_inset
+
+ הטוב ביותר שהתקבל הוא 
+\begin_inset Formula $\eta_{0}=1$
+\end_inset
+
+ עם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+accuracy
+\begin_inset Formula $=0.979$
+\end_inset
+
+
+\lang hebrew
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+לאחר שהובן כח הערכים מתכנסים ל 
+\begin_inset Formula $\eta_{0}=1$
+\end_inset
+
+ הורץ בפעם הרביעית על 
+\begin_inset Formula 
+\[
+\left(0.5,0.51,\ldots,1.49,1.5\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Formula $\eta_{0}$
+\end_inset
+
+ הטוב ביותר שהתקבל הוא 
+\begin_inset Formula $\eta_{0}=1$
+\end_inset
+
+ עם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+accuracy
+\begin_inset Formula $=0.981$
+\end_inset
+
+
+\lang hebrew
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename section _a_plots/1.png
+	scale 40
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename section _a_plots/2.png
+	scale 40
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename section _a_plots/3.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename section _a_plots/averaging the accuracy on the validation set across 10 runs(0.5,1.5,0.01).png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+accuracy as function of 
+\begin_inset Formula $\eta_{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+(b) 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+כדי לבחור את 
+\begin_inset Formula $C$
+\end_inset
+
+ הטוב ביותר, ניתן לאלגוריתם ערכים שהחלו ב 
+\begin_inset Formula 
+\[
+\left(10^{-5},10^{-4},\ldots,10^{4},10^{5}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Formula $C$
+\end_inset
+
+ הטוב ביותר שהתקבל הוא 
+\begin_inset Formula $C=10^{-4}$
+\end_inset
+
+ עם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+accuracy
+\begin_inset Formula $=0.986$
+\end_inset
+
+
+\lang hebrew
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נתמקד באזור בשבו התקבלה התוצאה הטובה ביותר, והאלגוריתם הורץ שנית )ברזולוציית
+ קפיצות קטנה יותר( 
+\begin_inset Formula 
+\[
+\left(-9999.9999,-9899.9999,\ldots,9800.0001,9900.0001\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Formula $C$
+\end_inset
+
+ הטוב ביותר שהתקבל הוא 
+\begin_inset Formula $C=0.001$
+\end_inset
+
+ עם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+accuracy
+\begin_inset Formula $=0.987$
+\end_inset
+
+
+\lang hebrew
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נתמקד באזור בשבו התקבלה התוצאה הטובה ביותר, והאלגוריתם הורץ שלישית )ברזולוציית
+ קפיצות קטנה יותר( 
+\begin_inset Formula 
+\[
+\left(-499.9999,-489,\ldots,480.0001,490.0001\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Formula $C$
+\end_inset
+
+ הטוב ביותר שהתקבל הוא 
+\begin_inset Formula $C=1$
+\end_inset
+
+ עם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+accuracy
+\begin_inset Formula $=0.986$
+\end_inset
+
+
+\lang hebrew
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename section_b_plots/1.png
+	scale 40
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename section_b_plots/2.png
+	scale 40
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename section_b_plots/3.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+accuracy as function of 
+\begin_inset Formula $C$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+(c) 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+ניתן לראות כי הפיקסלים הלבנים באמצע יכולים להעיד על אמצע הספרה 
+\begin_inset Formula $8$
+\end_inset
+
+ והפיקסלים בצבעי לבן - אפור בצדדים מעידים על הספרה 
+\begin_inset Formula $8$
+\end_inset
+
+ גם כן.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+הפיקסלים השחורים מעידים על הספרה 
+\begin_inset Formula $0$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename section_c_image/1.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Formula $\w$
+\end_inset
+
+ as an image
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+(d)
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+על סט הבדיקה התקבל : 
+\begin_inset Formula 
+\[
+accuracy=0.992835
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+SGD for log-loss.
+ 
+\end_layout
+
+\begin_layout Subsection
+(a) 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+כדי לבחור את 
+\begin_inset Formula $\eta_{0}$
+\end_inset
+
+ הטוב ביותר, ניתן לאלגוריתם ערכים שהחלו ב 
+\begin_inset Formula 
+\[
+\left(10^{-5},10^{-4},\ldots,10^{4},10^{5}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Formula $\eta_{0}$
+\end_inset
+
+ הטוב ביותר שהתקבל הוא 
+\begin_inset Formula $\eta_{0}=10^{-5}$
+\end_inset
+
+ עם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+accuracy
+\begin_inset Formula $=0.955$
+\end_inset
+
+
+\lang hebrew
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+נתמקד באזור בשבו התקבלה התוצאה הטובה ביותר, והאלגוריתם הורץ שנית )ברזולוציית
+ קפיצות קטנה יותר( 
+\begin_inset Formula 
+\[
+\left(-9999,-9899,\ldots,9801,9901\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+\begin_inset Formula $\eta_{0}$
+\end_inset
+
+ הטוב ביותר שהתקבל הוא 
+\begin_inset Formula $\eta_{0}=10^{-5}$
+\end_inset
+
+ עם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+accuracy
+\begin_inset Formula $=0.959$
+\end_inset
+
+
+\lang hebrew
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename q2/1.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename q2/2.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+accuracy as function of 
+\begin_inset Formula $\eta_{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+(b) 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename q2/3.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Formula $\w$
+\end_inset
+
+ as an image
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+על סט הבדיקה התקבל : 
+\begin_inset Formula 
+\[
+accuracy=0.973
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+(c) 
+\end_layout
+
+\begin_layout Standard
+
+\lang hebrew
+ניתן הסבר : 
+\end_layout
+
+\begin_layout Itemize
+
+\lang hebrew
+ההגעה לערך המינימלי של פונקציית
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+log-loss
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ע
+\begin_inset Quotes erd
+\end_inset
+
+י אלגוריתם
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+\lang english
+SGD
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang hebrew
+ 
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+מתבצע מהר, ולכן 
+\begin_inset Formula $\w$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+נלכד
+\begin_inset Quotes erd
+\end_inset
+
+ בערך המינימלי ולכן 
+\begin_inset Formula $\|\w_{t}\|_{2}$
+\end_inset
+
+ אינו משתנה לאחר האיטרציות הראשונות יחסית ל 
+\begin_inset Formula $20,000$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\lang hebrew
+בכל שלב 
+\begin_inset Formula $\eta$
+\end_inset
+
+ קטן, ולכן השינוי ב
+\begin_inset Formula $\|\w_{t}\|_{2}$
+\end_inset
+
+ , שתלוי בו, יקטן ככל ש 
+\begin_inset Formula $t$
+\end_inset
+
+ גדל.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename q2/4.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Formula $\|\w_{t}\|_{2}$
+\end_inset
+
+ as function of 
+\begin_inset Formula $t$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
