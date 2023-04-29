@@ -74,7 +74,7 @@ def SGD_log(data: np.ndarray, labels:np.ndarray, eta_0: float, T: int):
 
 
 
-def average_accuracy_plot(number_of_runs: int,  C: float, eta_0_lst: list, T: int) -> float:
+def average_accuracy_plot_eta(number_of_runs: int,  C: float, eta_0_lst: list, T: int, xlim_left, xlim_right) -> float:
     train_data, train_labels, validation_data, validation_labels = helper()[0] , helper()[1] ,helper()[2] ,helper()[3]
 
     y_axis = [] 
@@ -94,16 +94,62 @@ def average_accuracy_plot(number_of_runs: int,  C: float, eta_0_lst: list, T: in
             j = i 
     
     print('***********************************************')
-    print('The best eta_0 on avarage is: %.3f' % eta_0_lst[j] )
+    print('The best eta_0 on avarage is: %.6f' % eta_0_lst[j] )
     print('-----------------------------------------------')
     print('The best accuracy on avarage is: %.3f' % accu_of_best_eta_0)
     print('***********************************************')
     
     plt.plot(eta_0_lst, y_axis)   
+    plt.xscale('log')
     plt.title("averaging the accuracy on the validation set across 10 runs")
     plt.xlabel("eta_0")
     plt.ylabel("averaging the accuracy on the validation set across 10 runs")
-    plt.xlim(0.4, 1.6 )
+    plt.xlim(xlim_left, xlim_right)
+    ticks = [10**i for i in range(-5, 6)]
+    labels = ['10^{}'.format(i) for i in range(-5, 6)]
+    # plt.xticks(ticks, labels)
+    
+    plt.legend()
+    plt.show()
+
+    return eta_0_lst[j]
+
+def average_accuracy_plot_C(number_of_runs: int,  C_lst: list, eta_0  : float, T: int, xlim_left, xlim_right) -> float:
+    train_data, train_labels, validation_data, validation_labels = helper()[0] , helper()[1] ,helper()[2] ,helper()[3]
+
+    y_axis = [] 
+
+    for c in C_lst:
+        accur = 0 
+        for i in range(number_of_runs) :
+            w = SGD_hinge(train_data, train_labels, c, eta_0, T)
+            accur += accuracy_linear_classifier(w, validation_data, validation_labels)  
+        y_axis.append(accur / number_of_runs)
+
+    accu_of_best_C = 0
+    j = -1 
+    for i in range(len(y_axis)): 
+        if y_axis[i] > accu_of_best_C :
+            accu_of_best_C = y_axis[i]
+            j = i 
+    
+    print('***********************************************')
+    print('The best C on avarage is: %.6f' % C_lst[j] )
+    print('-----------------------------------------------')
+    print('The best accuracy on avarage is: %.3f' % accu_of_best_C)
+    print('***********************************************')
+    
+  
+    
+    plt.plot(C_lst, y_axis)   
+    plt.xscale('log')
+    plt.title("averaging the accuracy on the validation set across 10 runs")
+    plt.xlabel("C")
+    plt.ylabel("averaging the accuracy on the validation set across 10 runs")
+    ticks = [10**i for i in range(-5, 6)]
+    labels = [str(10**(i)) for i in range(-5, 6)]
+    plt.xticks(ticks, labels)
+    # plt.xlim(xlim_left, xlim_right)
     plt.legend()
     plt.show()
     
@@ -122,12 +168,38 @@ def accuracy_linear_classifier(w :np.ndarray , validation_data: np.ndarray, vali
 
     return 1 - (faild_number / N)
 
+def w_as_picture(best_eta, best_C, T):
+    train_data, train_labels, validation_data, validation_labels = helper()[0] , helper()[1] ,helper()[2] ,helper()[3]
+
+    w = SGD_hinge(train_data, train_labels, best_C, best_eta, T)
+
+    plt.imshow(np.reshape(w,(28,28)),interpolation = 'nearest' )
+    
+    accur = accuracy_linear_classifier(w, validation_data, validation_labels)
+    print('***********************************************')
+    print('The accuracy of the best classifier: %.6f' % accur )
+    print('-----------------------------------------------')
+  
+    plt.show()
+
+
 
 
 
 def main() : 
-    eta_0_lst = [i for i in np.arange (0.5,1.5,0.01)]
-    average_accuracy_plot(10, 1, eta_0_lst, 1000)
+    eta_0_lst = [10**i for i in range(-5,6,1)]
+    best_eta = average_accuracy_plot_eta(10, 1, eta_0_lst, 1000,0, 10**5)
+
+    # C_lst = [10**(i) for i in np.arange (-5,6,1)]
+    # C_lst = [10**(i) for i in range (-5,6,1)]
+    # average_accuracy_plot_C(10, C_lst, 0.97 , 1000, 0, 10**5)
+
+    # best_C = 22.4
+    # best_eta = 0.97 
+
+    # w_as_picture(best_eta, best_C, 20000 )
+
+
 
 
 
